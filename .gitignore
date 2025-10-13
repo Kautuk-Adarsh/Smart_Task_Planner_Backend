@@ -1,0 +1,47 @@
+
+.env  
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# -----------------------------------
+# Virtual Environment
+# -----------------------------------
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# Uvicorn/FastAPI specific cache
+.uvicorn/ 
+
+# Mypy type checker cache
+.mypy_cache/
+
+# pytest cache
+.pytest_cache/
+
+
+# -----------------------------------
+# Logs
+# -----------------------------------
+*.log
