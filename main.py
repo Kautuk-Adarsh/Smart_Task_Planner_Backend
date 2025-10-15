@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware 
 from config import initialize_gemini_client, logger
 from api.planner import router as planner_router
 from db.database import connect_to_mongo, close_mongo_connection
@@ -40,6 +41,21 @@ app = FastAPI(
     description="System for breaking down user goals into actionable tasks using the Gemini LLM.",
     version="1.1.0",
     lifespan=lifespan,
+)
+
+
+origins = [
+    
+    "http://localhost:3000",
+    
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
 
 app.include_router(planner_router, prefix="/api")
